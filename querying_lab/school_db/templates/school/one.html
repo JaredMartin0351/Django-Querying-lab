@@ -8,5 +8,10 @@
 </head>
 <body>
     <h1>Students with GPA Over 3.0</h1>
+    <ul>
+    {% for student in students %}
+    <h3>{{student.first_name}} - {{student.gpa}}</h3>
+    {% endfor %}
+    </ul>
 </body>
 </html>
