@@ -8,5 +8,8 @@
 </head>
 <body>
     <h1>Programming Students With A</h1>
+    {% for student in student_courses %}
+    <h3>{{ student.student.last_name }} {{student.student.first_name}} - {{ student.course.name }} - {{ student.grade }}</h3>
+    {% endfor %}
 </body>
 </html>
