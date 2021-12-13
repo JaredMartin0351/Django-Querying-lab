@@ -7,11 +7,22 @@
     <title>Problem One</title>
 </head>
 <body>
-    <h1>Students with GPA Over 3.0</h1>
-    <ul>
-    {% for student in students %}
-    <h3>{{student.first_name}} - {{student.gpa}}</h3>
-    {% endfor %}
-    </ul>
+    <table class="center-table">
+        <thead>
+            <tr>
+                <th>First Name</th><th>GPA</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{student.first_name}}</td><td>{{student.gpa}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>
+
+
+
