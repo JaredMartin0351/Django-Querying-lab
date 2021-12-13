@@ -46,7 +46,7 @@ def problem_three(request):
 def problem_four(request):
     # Find all students who are taking the Programming class. 
     # Order by their grade. 
-    student_courses = StudentCourse.objects.filter(course__name='Programming').order_by('-grade')
+    student_courses = StudentCourse.objects.filter(course__name='Programming').order_by('grade')
     data_visualization = [item for item in student_courses]
 
     context = {
