@@ -17,6 +17,8 @@ def index(request):
     return render(request, 'school/index.html', context)
 
 def problem_one(request):
+    # Find all students who have a GPA greater than 3.0. 
+    # Order the data by highest GPAs first.
     students = Student.objects.filter(gpa__gte = 3)
 
     context = {
