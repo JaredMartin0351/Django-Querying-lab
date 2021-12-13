@@ -37,10 +37,10 @@ def problem_two(request):
 def problem_three(request):
     # Find all students who have a A+ in any class and are NOT getting a C+ in any class. 
     # Order the data by student's first name alphabetically.
-    student_courses = StudentCourse.objects.filter(grade='A+').order_by('student')
-    exception = student_courses.exclude(grade='C+')
+    student_courses = StudentCourse.objects.filter(grade='A+').order_by('student') #and StudentCourse.objects.exclude(grade='C+')
+
     context = {
-        'student_courses': exception
+        'student_courses': student_courses
     }
     return render(request, 'school/three.html', context)
 
@@ -67,15 +67,11 @@ def problem_five(request):
 def problem_six(request):
     # Find all students with a GPA less than 3.0 who are getting an A in Programming class.
     # Order by GPA.
-    student_courses = StudentCourse.objects.filter(course__name='Programming', grade='A', student__gpa__lt=3.0)
-    
-    
-
-    data_visualization = [item for item in student_courses]
-    
+    student = Student.objects.filter(gpa__lt=3.0).order_by('-gpa')
+    data_visualization = [item for item in student]
 
     context = {
-        'student_courses': student_courses
+        'student_courses': student
     }
     return render(request, 'school/six.html', context)
 
