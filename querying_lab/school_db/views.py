@@ -37,7 +37,7 @@ def problem_two(request):
 def problem_three(request):
     # Find all students who have a A+ in any class and are NOT getting a C+ in any class. 
     # Order the data by student's first name alphabetically.
-    student_courses = StudentCourse.objects.filter(grade='A+').order_by('-student_id')
+    student_courses = StudentCourse.objects.filter(grade='A+').order_by('-student')
     context = {
         'student_courses': student_courses
     }
@@ -46,7 +46,7 @@ def problem_three(request):
 def problem_four(request):
     # Find all students who are taking the Programming class. 
     # Order by their grade. 
-    student_courses = StudentCourse.objects.filter(course__name='Programming').order_by('-grade')
+    student_courses = StudentCourse.objects.filter(course__name='Programming').order_by('grade')
     data_visualization = [item for item in student_courses]
 
     context = {
