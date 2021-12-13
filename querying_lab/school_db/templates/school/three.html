@@ -8,5 +8,10 @@
 </head>
 <body>
     <h1>Students With A+</h1> 
+    <ul>
+    {% for student in student_courses %}
+    <h2>{{student.grade}} - {{student.student.first_name}}</h2>
+    {% endfor %}
+    </ul>
 </body>
 </html>
