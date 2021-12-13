@@ -16,9 +16,9 @@
             </tr>
         </thead>
         <tbody>
-            {% for student in student_courses %}
+            {% for student in exception %}
             <tr>
-                <td>{{student.student.first_name}} - {{student.student.last_name}} - {{student.grade}}</td>
+                <td>{{student.first_name}} - {{student.student.last_name}} - {{student.grade}}</td>
             </tr>
             {% endfor %}
         </tbody>
