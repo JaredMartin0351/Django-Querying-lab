@@ -66,9 +66,11 @@ def problem_five(request):
 def problem_six(request):
     # Find all students with a GPA less than 3.0 who are getting an A in Programming class.
     # Order by GPA.
+    student = Student.objects.filter(gpa__lt=3.0).order_by('-gpa')
+    data_visualization = [item for item in student]
 
     context = {
-        'student_courses': None
+        'student_courses': student
     }
     return render(request, 'school/six.html', context)
 
